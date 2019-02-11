@@ -8,4 +8,6 @@ pyuic5 MainForm.ui > MainForm.py - преобразовать вид в код
 
  /usr/lib/qt5/bin/designer - запустить Qt designer
  
- dia -рисование блок схемм
+sudo apt-get install sox libsox-fmt-mp3
+pip3 install google_speech
+apt install mpg321
