@@ -20,13 +20,15 @@ class MainFormSlot(QtWidgets.QMainWindow, Ui_Form_Main):
 
         event = Event()
         status_event = event.select_status_event(button_name)
-        event_controller =  EventController()
+        event_controller = EventController()
+        event_text = ''
         if status_event == 'high_light':
-            button_text = event_controller.high_light()
-            self.pushButton_highLight.setText(button_text)
+            event_text = event_controller.high_light()
 
         elif status_event == 'low_light':
-            button_text = event_controller.low_light()
-            self.pushButton_lowLight.setText(button_text)
+            event_text = event_controller.low_light()
 
-        self.label.setText(sender.objectName())
+        elif status_event == 'oven':
+            event_text = event_controller.oven()
+
+        self.label.setText(event_text)
