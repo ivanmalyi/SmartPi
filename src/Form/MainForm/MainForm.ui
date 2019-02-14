@@ -115,7 +115,7 @@
     <string>обогреватель</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_saloneLight">
+  <widget class="QPushButton" name="pushButton_salonLight">
    <property name="geometry">
     <rect>
      <x>160</x>

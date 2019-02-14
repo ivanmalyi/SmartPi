@@ -10,6 +10,9 @@ class EventController:
 	__private_high_light_text = ' дальний свет'
 	__private_low_light_text = ', ближний свет'
 	__private_oven = ' обогреватель'
+	__private_salon_light = ' свет в салоне'
+	__private_back_light = ' свет в багажнике'
+	__private_engine_light = ' свет под капотом'
 
 	def high_light(self):
 		pg0 = gpio.input(port.PG0)
@@ -51,6 +54,48 @@ class EventController:
 		else:
 			gpio.output(port.PG2, gpio.LOW)
 			button_text = self.__private_off + self.__private_oven
+			os.system("mpg321 ../../files/sound/ -quiet")
+
+		return button_text
+
+	def salon_light(self):
+		pg3 = gpio.input(port.PG3)
+
+		if pg3 == gpio.LOW:
+			gpio.output(port.PG3, gpio.HIGH)
+			button_text = self.__private_on + self.__private_salon_light
+			os.system("mpg321 ../../files/sound/ -quiet")
+		else:
+			gpio.output(port.PG3, gpio.LOW)
+			button_text = self.__private_off + self.__private_salon_light
+			os.system("mpg321 ../../files/sound/ -quiet")
+
+		return button_text
+
+	def back_light(self):
+		pg4 = gpio.input(port.PG4)
+
+		if pg4 == gpio.LOW:
+			gpio.output(port.PG4, gpio.HIGH)
+			button_text = self.__private_on + self.__private_back_light
+			os.system("mpg321 ../../files/sound/ -quiet")
+		else:
+			gpio.output(port.PG4, gpio.LOW)
+			button_text = self.__private_off + self.__private_back_light
+			os.system("mpg321 ../../files/sound/ -quiet")
+
+		return button_text
+
+	def engine_light(self):
+		pg5 = gpio.input(port.PG5)
+
+		if pg5 == gpio.LOW:
+			gpio.output(port.PG5, gpio.HIGH)
+			button_text = self.__private_on + self.__private_back_light
+			os.system("mpg321 ../../files/sound/ -quiet")
+		else:
+			gpio.output(port.PG5, gpio.LOW)
+			button_text = self.__private_off + self.__private_back_light
 			os.system("mpg321 ../../files/sound/ -quiet")
 
 		return button_text
