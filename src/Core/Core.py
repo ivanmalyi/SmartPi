@@ -28,11 +28,28 @@ def main():
 	window.show()
 	app.exec_()
 
+def initialize_ports():
+	gpio.init()
+	gpio.setcfg(port.PG6, gpio.OUTPUT)
+	gpio.setcfg(port.PG7, gpio.OUTPUT)
+	gpio.setcfg(port.PG9, gpio.OUTPUT)
+
+	gpio.setcfg(port.PD1, gpio.OUTPUT)
+	gpio.output(port.PD1, gpio.HIGH)
+
+	gpio.setcfg(port.PE1, gpio.OUTPUT)
+	gpio.output(port.PE1, gpio.HIGH)
+
+	gpio.setcfg(port.PI1, gpio.OUTPUT)
+	gpio.output(port.PI1, gpio.HIGH)
 
 if __name__ == '__main__':
-	try:
-		main()
-	except:
-		print(Exception.__traceback__)
+
+	initialize_ports()
+
+	#try:
+	#	main()
+	#except:
+	#	print(Exception.__traceback__)
 
 
