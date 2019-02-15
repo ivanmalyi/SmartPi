@@ -36,20 +36,29 @@ def initialize_ports():
 
 	gpio.setcfg(port.PD1, gpio.OUTPUT)
 	gpio.output(port.PD1, gpio.HIGH)
+	print("PD1/n")
+	sleep(2)
+	gpio.output(port.PD1, gpio.LOW)
 
 	gpio.setcfg(port.PE1, gpio.OUTPUT)
 	gpio.output(port.PE1, gpio.HIGH)
+	print("PE1/n")
+	sleep(2)
+	gpio.output(port.PE1, gpio.LOW)
 
 	gpio.setcfg(port.PI1, gpio.OUTPUT)
 	gpio.output(port.PI1, gpio.HIGH)
+	print("PI1/n")
+	sleep(2)
+	gpio.output(port.PI1, gpio.LOW)
 
 if __name__ == '__main__':
 
 	initialize_ports()
 
-	try:
-		main()
-	except:
-		print(Exception.__traceback__)
+#	try:
+#		main()
+#	except:
+#		print(Exception.__traceback__)
 
 
