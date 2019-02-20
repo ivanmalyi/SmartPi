@@ -1,9 +1,11 @@
+import sys
+sys.path.append("../Controller")
+sys.path.append("../Form/MainForm")
 from pyA20.gpio import gpio
 from pyA20.gpio import port
 from time import sleep
 from PyQt5 import QtWidgets
 from MainFormSlot import MainFormSlot
-import sys
 
 #gpio.init()
 #gpio.setcfg(port.PG7, gpio.OUTPUT)
