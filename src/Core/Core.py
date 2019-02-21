@@ -46,9 +46,9 @@ if __name__ == '__main__':
 
 	initialize_ports()
 
-#	try:
-#		main()
-#	except:
-#		print(Exception.__traceback__)
+	try:
+		main()
+	except:
+		print(Exception.__traceback__)
 
 
