@@ -15,46 +15,46 @@ class EventController:
 	__private_engine_light = ' свет под капотом'
 
 	def high_light(self):
-		pg0 = gpio.input(port.PG0)
+		pg9 = gpio.input(port.PG9)
 
-		if pg0 == gpio.LOW:
-			gpio.output(port.PG0, gpio.HIGH)
-			gpio.output(port.PG1, gpio.LOW)
+		if pg9 == gpio.LOW:
+			gpio.output(port.PG9, gpio.HIGH)
+			gpio.output(port.PG7, gpio.LOW)
 			button_text = self.__private_off+self.__private_high_light_text
-			os.system("mpg321 ../../files/sound/on_high_light.mp3 -quiet")
+			os.system("mpg327 ../../files/sound/on_high_light.mp3 -quiet")
 		else:
-			gpio.output(port.PG0, gpio.LOW)
+			gpio.output(port.PG9, gpio.LOW)
 			button_text = self.__private_on + self.__private_high_light_text
-			os.system("mpg321 ../../files/sound/off_high_light.mp3 -quiet")
+			os.system("mpg327 ../../files/sound/off_high_light.mp3 -quiet")
 
 		return button_text
 
 	def low_light(self):
-		pg1 = gpio.input(port.PG1)
+		pg7 = gpio.input(port.PG7)
 
-		if pg1 == gpio.LOW:
-			gpio.output(port.PG1, gpio.HIGH)
-			gpio.output(port.PG0, gpio.LOW)
+		if pg7 == gpio.LOW:
+			gpio.output(port.PG7, gpio.HIGH)
+			gpio.output(port.PG9, gpio.LOW)
 			button_text = self.__private_off + self.__private_low_light_text
-			os.system("mpg321 ../../files/sound/low_on_light.mp3 -quiet")
+			os.system("mpg327 ../../files/sound/low_on_light.mp3 -quiet")
 		else:
-			gpio.output(port.PG1, gpio.LOW)
+			gpio.output(port.PG7, gpio.LOW)
 			button_text = self.__private_on + self.__private_low_light_text
-			os.system("mpg321 ../../files/sound/off_low_light.mp3 -quiet")
+			os.system("mpg327 ../../files/sound/off_low_light.mp3 -quiet")
 
 		return button_text
 
 	def oven(self):
-		pg2 = gpio.input(port.PG2)
+		pg6 = gpio.input(port.PG6)
 
-		if pg2 == gpio.LOW:
-			gpio.output(port.PG2, gpio.HIGH)
+		if pg6 == gpio.LOW:
+			gpio.output(port.PG6, gpio.HIGH)
 			button_text = self.__private_on + self.__private_oven
-			os.system("mpg321 ../../files/sound/ -quiet")
+			os.system("mpg327 ../../files/sound/ -quiet")
 		else:
-			gpio.output(port.PG2, gpio.LOW)
+			gpio.output(port.PG6, gpio.LOW)
 			button_text = self.__private_off + self.__private_oven
-			os.system("mpg321 ../../files/sound/ -quiet")
+			os.system("mpg327 ../../files/sound/ -quiet")
 
 		return button_text
 
@@ -64,11 +64,11 @@ class EventController:
 		if pg3 == gpio.LOW:
 			gpio.output(port.PG3, gpio.HIGH)
 			button_text = self.__private_on + self.__private_salon_light
-			os.system("mpg321 ../../files/sound/ -quiet")
+			os.system("mpg327 ../../files/sound/ -quiet")
 		else:
 			gpio.output(port.PG3, gpio.LOW)
 			button_text = self.__private_off + self.__private_salon_light
-			os.system("mpg321 ../../files/sound/ -quiet")
+			os.system("mpg327 ../../files/sound/ -quiet")
 
 		return button_text
 
@@ -78,11 +78,11 @@ class EventController:
 		if pg4 == gpio.LOW:
 			gpio.output(port.PG4, gpio.HIGH)
 			button_text = self.__private_on + self.__private_back_light
-			os.system("mpg321 ../../files/sound/ -quiet")
+			os.system("mpg327 ../../files/sound/ -quiet")
 		else:
 			gpio.output(port.PG4, gpio.LOW)
 			button_text = self.__private_off + self.__private_back_light
-			os.system("mpg321 ../../files/sound/ -quiet")
+			os.system("mpg327 ../../files/sound/ -quiet")
 
 		return button_text
 
@@ -92,10 +92,10 @@ class EventController:
 		if pg5 == gpio.LOW:
 			gpio.output(port.PG5, gpio.HIGH)
 			button_text = self.__private_on + self.__private_back_light
-			os.system("mpg321 ../../files/sound/ -quiet")
+			os.system("mpg327 ../../files/sound/ -quiet")
 		else:
 			gpio.output(port.PG5, gpio.LOW)
 			button_text = self.__private_off + self.__private_back_light
-			os.system("mpg321 ../../files/sound/ -quiet")
+			os.system("mpg327 ../../files/sound/ -quiet")
 
 		return button_text
